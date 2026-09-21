@@ -43,3 +43,17 @@ th {
 .menu button {
     margin: 5px;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+}
+
+form button {
+    margin-top: 10px;
+}
