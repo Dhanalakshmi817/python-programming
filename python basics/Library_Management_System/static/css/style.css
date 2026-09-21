@@ -21,3 +21,11 @@ button {
     color: white;
     border: none;
 }
+
+.menu {
+    margin: 20px;
+}
+
+.menu button {
+    margin: 5px;
+}
