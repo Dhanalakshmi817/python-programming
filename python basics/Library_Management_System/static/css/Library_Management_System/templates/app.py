@@ -92,6 +92,28 @@ def delete_member(id):
 
     return redirect("/members")
 
+@app.route("/editmember/<int:id>", methods=["GET", "POST"]) 
+def editmember(id):
+     con = sqlite3.connect("library.db") 
+     con.row_factory = sqlite3.Row 
+     cur = con.cursor()
+     if request.method == "POST": 
+        name = request.form["name"] 
+        email = request.form["email"]
+        phone = request.form["phone"] 
+
+        cur.execute( "UPDATE members SET name = ?, email = ?, phone = ? WHERE id = ?", (name, email, phone, id) )
+        con.commit() 
+        con.close() 
+
+        return redirect("/members") 
+     
+     cur.execute( "SELECT * FROM members WHERE id = ?", (id,) )
+     member = cur.fetchone() 
+     con.close()
+
+     return render_template("editmember.html", member=member)
+
 @app.route("/add", methods=["GET", "POST"])
 def add():
     if request.method == "POST":

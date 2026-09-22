@@ -75,3 +75,24 @@ input {
     color: red;
     text-decoration: none;
 }
+
+.add {
+    color: green;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.edit {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.delete {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px;
+}

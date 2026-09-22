@@ -29,6 +29,7 @@
                 <td>{{ member["email"] }}</td>
                 <td>{{ member["phone"] }}</td>
                 <td>
+                    <a href="/editmember/{{ member['id'] }}" class="edit">Edit</a>
                    <a href="/deletemember/{{ member['id'] }}" class="delete">Delete</a>
                 </td>
             </tr>
