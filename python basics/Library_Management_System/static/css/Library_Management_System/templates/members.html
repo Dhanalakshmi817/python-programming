@@ -12,6 +12,7 @@
     <div class="box">
 
         <h2>Library Members</h2>
+        <a href="/addmember" class="add">Add Member</a>
 
         <table>
             <tr>
@@ -27,6 +28,9 @@
                 <td>{{ member["name"] }}</td>
                 <td>{{ member["email"] }}</td>
                 <td>{{ member["phone"] }}</td>
+                <td>
+                   <a href="/deletemember/{{ member['id'] }}" class="delete">Delete</a>
+                </td>
             </tr>
             {% endfor %}
 
