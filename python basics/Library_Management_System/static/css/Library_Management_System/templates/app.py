@@ -134,5 +134,21 @@ def add():
 
     return render_template("add.html")
 
+@app.route("/deletebook/<int:id>")
+def deletebook(id):
+
+    con = sqlite3.connect("library.db")
+    cur = con.cursor()
+
+    cur.execute(
+        "DELETE FROM books WHERE id = ?",
+        (id,)
+    )
+
+    con.commit()
+    con.close()
+
+    return redirect("/books")
+
 if __name__ == "__main__":
     app.run(debug=True)

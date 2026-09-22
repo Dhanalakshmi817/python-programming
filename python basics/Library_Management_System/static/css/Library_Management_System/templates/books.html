@@ -19,6 +19,7 @@
                 <th>Book Name</th>
                 <th>Author</th>
                 <th>Status</th>
+                <th>Action</th>
             </tr>
 
             {% for book in books %}
@@ -27,6 +28,11 @@
                 <td>{{ book["name"] }}</td>
                 <td>{{ book["author"] }}</td>
                 <td>{{ book["status"] }}</td>
+
+                <td>
+                  <a href="/deletebook/{{ book['id'] }}" class="delete">Delete</a>
+                </td>
+                
             </tr>
             {% endfor %}
 
