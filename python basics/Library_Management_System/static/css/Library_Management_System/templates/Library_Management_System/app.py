@@ -60,6 +60,26 @@ def members():
 
     return render_template("members.html", members=data)
 
+@app.route("/addmember", methods=["GET", "POST"])
+def add_member():
+    if request.method == "POST":
+        name = request.form["name"]
+        email = request.form["email"]
+        phone = request.form["phone"]
+
+        con = sqlite3.connect("library.db")
+        cur = con.cursor()
+
+        cur.execute(
+            "INSERT INTO members (name, email, phone) VALUES (?, ?, ?)",
+            (name, email, phone)
+        )
+
+        con.commit()
+        con.close()
+
+    return render_template("addmember.html")
+
 @app.route("/add", methods=["GET", "POST"])
 def add():
     if request.method == "POST":

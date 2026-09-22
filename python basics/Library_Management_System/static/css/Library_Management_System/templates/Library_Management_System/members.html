@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Members</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+    <h1>Members</h1>
+
+    <div class="box">
+
+        <h2>Library Members</h2>
+        <a href="/addmember">Add Member</a>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+
+            {% for member in members %}
+            <tr>
+                <td>{{ member["id"] }}</td>
+                <td>{{ member["name"] }}</td>
+                <td>{{ member["email"] }}</td>
+                <td>{{ member["phone"] }}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</body>
+</html>
